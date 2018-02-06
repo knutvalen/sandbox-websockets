@@ -126,3 +126,4 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 workspace.xml
+profiles_settings.xml
