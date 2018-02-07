@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7B9E79517A6D1A6124F78B96 /* Pods_websocket_app_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D16AF6319202F6609100558 /* Pods_websocket_app_ios.framework */; };
+		CC170339202B44B50017D443 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC170338202B44B50017D443 /* Message.swift */; };
+		CC17033B202B45C90017D443 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17033A202B45C90017D443 /* MessageTableViewCell.swift */; };
 		CCA9F61D2028A53200D65663 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA9F61C2028A53200D65663 /* AppDelegate.swift */; };
 		CCA9F61F2028A53200D65663 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA9F61E2028A53200D65663 /* ViewController.swift */; };
 		CCA9F6222028A53200D65663 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA9F6202028A53200D65663 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 		3B37D0443A91ACBD06A7BCF4 /* Pods-websocket-app-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-websocket-app-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-websocket-app-ios/Pods-websocket-app-ios.release.xcconfig"; sourceTree = "<group>"; };
 		3F279046A9D537830091583D /* Pods-websocket-app-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-websocket-app-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-websocket-app-ios/Pods-websocket-app-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		6D16AF6319202F6609100558 /* Pods_websocket_app_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_websocket_app_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC170338202B44B50017D443 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		CC17033A202B45C90017D443 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		CCA9F6192028A53200D65663 /* websocket-app-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "websocket-app-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA9F61C2028A53200D65663 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCA9F61E2028A53200D65663 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				CCA9F61C2028A53200D65663 /* AppDelegate.swift */,
 				CCA9F61E2028A53200D65663 /* ViewController.swift */,
 				CCA9F6202028A53200D65663 /* Main.storyboard */,
+				CC17033A202B45C90017D443 /* MessageTableViewCell.swift */,
+				CC170338202B44B50017D443 /* Message.swift */,
 				CCA9F6232028A53200D65663 /* Assets.xcassets */,
 				CCA9F6252028A53200D65663 /* LaunchScreen.storyboard */,
 				CCA9F6282028A53200D65663 /* Info.plist */,
@@ -217,6 +223,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC170339202B44B50017D443 /* Message.swift in Sources */,
+				CC17033B202B45C90017D443 /* MessageTableViewCell.swift in Sources */,
 				CCA9F61F2028A53200D65663 /* ViewController.swift in Sources */,
 				CCA9F61D2028A53200D65663 /* AppDelegate.swift in Sources */,
 			);

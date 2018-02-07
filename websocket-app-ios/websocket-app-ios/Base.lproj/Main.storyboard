@@ -35,29 +35,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXy-1g-cvX">
-                                <rect key="frame" x="117.5" y="80" width="139" height="30"/>
+                                <rect key="frame" x="118" y="80" width="139" height="30"/>
                                 <state key="normal" title="Write a binary frame"/>
                                 <connections>
                                     <action selector="binaryFrameButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RPe-XM-eYK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBj-y3-Elm">
-                                <rect key="frame" x="124" y="172" width="126" height="30"/>
+                                <rect key="frame" x="124.5" y="172" width="126" height="30"/>
                                 <state key="normal" title="Write a ping frame"/>
                                 <connections>
                                     <action selector="pingFrameButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dcp-Gu-He5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33a-kO-god">
-                                <rect key="frame" x="119" y="126" width="136" height="30"/>
+                                <rect key="frame" x="119.5" y="126" width="136" height="30"/>
                                 <state key="normal" title="Write a string frame"/>
                                 <connections>
                                     <action selector="stringFrameButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GSE-3X-B49"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a19-3P-tDe">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a19-3P-tDe">
                                 <rect key="frame" x="8" y="218" width="359" height="433"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageTableViewCell" id="vio-Wl-D3l" customClass="MessageTableViewCell" customModule="websocket_app_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="359" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vio-Wl-D3l" id="q01-kM-0Ca">
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48I-Ll-vzB">
+                                                    <rect key="frame" x="15" y="11" width="329" height="68"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="48I-Ll-vzB" id="8W9-oT-Fov"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -84,6 +106,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="connectButton" destination="4sQ-oY-sCI" id="hm2-l3-Qlf"/>
+                        <outlet property="messageTableView" destination="a19-3P-tDe" id="oNi-ks-2NS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
