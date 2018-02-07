@@ -9,18 +9,19 @@
 import UIKit
 import Starscream
 
-class ViewController: UIViewController, WebSocketDelegate {
+class ViewController: UIViewController, WebSocketDelegate, WebSocketPongDelegate {
     
     var socket: WebSocket!
-
     @IBOutlet weak var connectButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         var request = URLRequest(url: URL(string: "http://localhost:8080")!)
         request.timeoutInterval = 5
-        socket = WebSocket(request: request, protocols: ["echo-protocol"])
+        let protocols = ["echo"]
+        socket = WebSocket(request: request, protocols: protocols)
         socket.delegate = self
+        socket.pongDelegate = self
         socket.connect()
     }
 
@@ -49,6 +50,12 @@ class ViewController: UIViewController, WebSocketDelegate {
         print("recieved data: \(data)")
     }
     
+    // MARK: WebSocketPongDelegate methods
+    
+    func websocketDidReceivePong(socket: WebSocketClient, data: Data?) {
+        print("recieved pong")
+    }
+    
     // MARK: Actions
     
     @IBAction func handleConnection(_ sender: UIBarButtonItem) {
@@ -57,6 +64,18 @@ class ViewController: UIViewController, WebSocketDelegate {
         } else {
             socket.connect()
         }
+    }
+    
+    @IBAction func binaryFrameButtonClicked(_ sender: UIButton) {
+        socket.write(data: Data(bytes: [1, 2, 3, 4, 5, 6, 7, 8]))
+    }
+    
+    @IBAction func stringFrameButtonClicked(_ sender: UIButton) {
+        socket.write(string: "Hello World!")
+    }
+    
+    @IBAction func pingFrameButtonClicked(_ sender: UIButton) {
+        socket.write(ping: Data())
     }
 }
 
