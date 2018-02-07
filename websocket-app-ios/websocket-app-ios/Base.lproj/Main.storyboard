@@ -55,15 +55,23 @@
                                     <action selector="stringFrameButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GSE-3X-B49"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a19-3P-tDe">
+                                <rect key="frame" x="8" y="218" width="359" height="433"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="33a-kO-god" firstAttribute="top" secondItem="mXy-1g-cvX" secondAttribute="bottom" constant="16" id="0TK-fm-SLq"/>
                             <constraint firstItem="mXy-1g-cvX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8Nl-wR-CbA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a19-3P-tDe" secondAttribute="trailing" constant="8" id="CRA-bz-5TA"/>
                             <constraint firstItem="mXy-1g-cvX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="CW2-sq-W1A"/>
                             <constraint firstItem="RBj-y3-Elm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NKx-QZ-lVI"/>
                             <constraint firstItem="33a-kO-god" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Qp4-eo-fGG"/>
                             <constraint firstItem="RBj-y3-Elm" firstAttribute="top" secondItem="33a-kO-god" secondAttribute="bottom" constant="16" id="b7Y-WX-DzG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a19-3P-tDe" secondAttribute="bottom" constant="16" id="dAv-fc-IEy"/>
+                            <constraint firstItem="a19-3P-tDe" firstAttribute="top" secondItem="RBj-y3-Elm" secondAttribute="bottom" constant="16" id="ibS-r0-6FL"/>
+                            <constraint firstItem="a19-3P-tDe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="qE6-Bb-iUy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -80,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="118" y="358"/>
+            <point key="canvasLocation" x="117.59999999999999" y="357.57121439280365"/>
         </scene>
     </scenes>
 </document>

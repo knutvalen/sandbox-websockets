@@ -78,4 +78,3 @@ class ViewController: UIViewController, WebSocketDelegate, WebSocketPongDelegate
         socket.write(ping: Data())
     }
 }
-
