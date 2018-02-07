@@ -9,19 +9,25 @@
 import UIKit
 import Starscream
 
-class ViewController: UIViewController, WebSocketDelegate, WebSocketPongDelegate {
-    
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WebSocketDelegate, WebSocketPongDelegate {
+
     var socket: WebSocket!
+    var messages = [Message]()
     @IBOutlet weak var connectButton: UIBarButtonItem!
+    @IBOutlet weak var messageTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         var request = URLRequest(url: URL(string: "http://localhost:8080")!)
         request.timeoutInterval = 5
         let protocols = ["echo"]
         socket = WebSocket(request: request, protocols: protocols)
         socket.delegate = self
         socket.pongDelegate = self
+        messageTableView.delegate = self
+        messageTableView.dataSource = self
+        
         socket.connect()
     }
 
@@ -30,7 +36,7 @@ class ViewController: UIViewController, WebSocketDelegate, WebSocketPongDelegate
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: WebSocketDelegate methods
+    // MARK: - WebSocketDelegate functions
     
     func websocketDidConnect(socket: WebSocketClient) {
         print("websocket connected")
@@ -43,20 +49,23 @@ class ViewController: UIViewController, WebSocketDelegate, WebSocketPongDelegate
     }
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
-        print("recieved text: \(text)")
+        let text = "recieved text: \(text)"
+        addMessageToTableView(description: text)
     }
     
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
-        print("recieved data: \(data)")
+        let text = "recieved data: \(data)"
+        addMessageToTableView(description: text)
     }
     
-    // MARK: WebSocketPongDelegate methods
+    // MARK: WebSocketPongDelegate functions
     
     func websocketDidReceivePong(socket: WebSocketClient, data: Data?) {
-        print("recieved pong")
+        let text = "recieved pong"
+        addMessageToTableView(description: text)
     }
     
-    // MARK: Actions
+    // MARK: - Actions
     
     @IBAction func handleConnection(_ sender: UIBarButtonItem) {
         if socket.isConnected {
@@ -77,5 +86,37 @@ class ViewController: UIViewController, WebSocketDelegate, WebSocketPongDelegate
     @IBAction func pingFrameButtonClicked(_ sender: UIButton) {
         socket.write(ping: Data())
     }
+    
+    // MARK: - Private functions
+    
+    func addMessageToTableView(description: String) {
+        guard let message = Message(description: description) else {
+            fatalError("Unable to instantiate message")
+        }
+        
+        messages.insert(message, at: 0)
+        messageTableView.reloadData()
+    }
+    
+    // MARK: - Table view functions
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "MessageTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MessageTableViewCell else {
+            fatalError("The dequeued cell is not an instance of MessageTableViewCell. ")
+        }
+        
+        let message = messages[indexPath.row]
+        cell.descriptionLabel.text = message.description
+        
+        return cell
+    }
 }
-
