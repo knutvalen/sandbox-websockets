@@ -56,10 +56,10 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a19-3P-tDe">
-                                <rect key="frame" x="8" y="218" width="359" height="433"/>
+                                <rect key="frame" x="8" y="247" width="359" height="404"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageTableViewCell" id="vio-Wl-D3l" customClass="MessageTableViewCell" customModule="websocket_app_ios" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageTableViewCell" id="vio-Wl-D3l" customClass="MessageTableViewCell" customModule="websocket_app_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="359" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vio-Wl-D3l" id="q01-kM-0Ca">
@@ -81,18 +81,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cV-No-uIK">
+                                <rect key="frame" x="16" y="218" width="77.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="33a-kO-god" firstAttribute="top" secondItem="mXy-1g-cvX" secondAttribute="bottom" constant="16" id="0TK-fm-SLq"/>
+                            <constraint firstItem="7cV-No-uIK" firstAttribute="top" secondItem="RBj-y3-Elm" secondAttribute="bottom" constant="16" id="1YB-3s-nk7"/>
                             <constraint firstItem="mXy-1g-cvX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8Nl-wR-CbA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a19-3P-tDe" secondAttribute="trailing" constant="8" id="CRA-bz-5TA"/>
                             <constraint firstItem="mXy-1g-cvX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="CW2-sq-W1A"/>
+                            <constraint firstItem="7cV-No-uIK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="HMo-vt-TXh"/>
+                            <constraint firstItem="a19-3P-tDe" firstAttribute="top" secondItem="7cV-No-uIK" secondAttribute="bottom" constant="8" id="Lm3-V5-pwQ"/>
                             <constraint firstItem="RBj-y3-Elm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NKx-QZ-lVI"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7cV-No-uIK" secondAttribute="trailing" constant="20" symbolic="YES" id="NiT-4h-atH"/>
                             <constraint firstItem="33a-kO-god" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Qp4-eo-fGG"/>
                             <constraint firstItem="RBj-y3-Elm" firstAttribute="top" secondItem="33a-kO-god" secondAttribute="bottom" constant="16" id="b7Y-WX-DzG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a19-3P-tDe" secondAttribute="bottom" constant="16" id="dAv-fc-IEy"/>
-                            <constraint firstItem="a19-3P-tDe" firstAttribute="top" secondItem="RBj-y3-Elm" secondAttribute="bottom" constant="16" id="ibS-r0-6FL"/>
                             <constraint firstItem="a19-3P-tDe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="qE6-Bb-iUy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

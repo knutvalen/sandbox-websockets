@@ -10,11 +10,15 @@ import UIKit
 import Starscream
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WebSocketDelegate, WebSocketPongDelegate {
+    
+    // MARK: - Properties
 
     var socket: WebSocket!
     var messages = [Message]()
     @IBOutlet weak var connectButton: UIBarButtonItem!
     @IBOutlet weak var messageTableView: UITableView!
+    
+    // MARK: - UIViewController functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,20 +53,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
-        let text = "recieved text: \(text)"
-        addMessageToTableView(description: text)
+        let description = "recieved text: \(text)"
+        print(description)
+        addMessageToTableView(description: description)
     }
     
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
-        let text = "recieved data: \(data)"
-        addMessageToTableView(description: text)
+        let description = "recieved data: \(data)"
+        print(description)
+        addMessageToTableView(description: description)
     }
     
-    // MARK: WebSocketPongDelegate functions
+    // MARK: - WebSocketPongDelegate functions
     
     func websocketDidReceivePong(socket: WebSocketClient, data: Data?) {
-        let text = "recieved pong"
-        addMessageToTableView(description: text)
+        let description = "recieved pong"
+        print(description)
+        addMessageToTableView(description: description)
     }
     
     // MARK: - Actions
